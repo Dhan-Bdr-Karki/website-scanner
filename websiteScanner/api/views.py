@@ -26,13 +26,13 @@ class ScanWebsite(APIView):
                             return Response({"status": "error", "message": "waybackurl command not found"})
                         return Response({"status": "success", "message": "Url " + url + " scanning is completed...", "output": output_list}, status=status.HTTP_200_OK)
                     else:
-                        return Response({"status": "error", "message": "Invalid domain"}, status=status.HTTP_404_NOT_FOUND)
+                        return Response({"status": "error", "message": "Domain is not available"}, status=status.HTTP_404_NOT_FOUND)
                 except Exception as e:
                     return Response({"status": "error", "message": e}, status=status.HTTP_404_NOT_FOUND)
             else:
-                return Response({"status": "error", "message": "No url is provided"}, status=status.HTTP_400_BAD_REQUEST)
+                return Response({"status": "error", "message": "Invalid url"}, status=status.HTTP_400_BAD_REQUEST)
         else:
-            return Response({"status": "error", "message": "Invalid url"}, status=status.HTTP_404_NOT_FOUND)
+            return Response({"status": "error", "message": "No url is provided."}, status=status.HTTP_404_NOT_FOUND)
 
 class DisplayQueryResult(APIView):
     def get(self, request):
