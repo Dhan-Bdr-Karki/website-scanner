@@ -26,9 +26,7 @@ schema_view = get_schema_view(
         title="WebScanner API",
         default_version='v1',
         description="Get all links",
-        terms_of_service="https://www.google.com/policies/terms/",
-        contact=openapi.Contact(email="contact@snippets.local"),
-        license=openapi.License(name="BSD License"),
+        terms_of_service="",
     ),
     public=True,
     permission_classes=[permissions.AllowAny],
@@ -37,9 +35,7 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include([
-    path('', include('api.urls')),
-    path('', schema_view.with_ui('swagger', cache_timeout=0),
-            name='schema-swagger-ui'),
-    ])),
+    path('api/', include('api.urls')),
+    path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+
 ]
