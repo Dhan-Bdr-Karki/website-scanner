@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "ab5424d8-0d38-4269-ba37-da624dcaed4b",
+		"name": "intern test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23903280"
+	},
+	"item": [
+		{
+			"name": "scan web link",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\":\"javatpoint.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/scan/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"scan",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "display result",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/display/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"display",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
